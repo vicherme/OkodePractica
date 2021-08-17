@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-title>Listado de Películas</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar [(ngModel)]="term" (ionChange)="searchChanged($event)" placeholder="Buscar película...">
+    </ion-searchbar>
+    <ion-list>
+        <ion-item button *ngFor="let film of (results | async)" [routerLink]="['/', 'details', film.imdbID]">
+            <ion-label text-wrap>
+                <h2>{{film.Title}}</h2>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar color="light">
+        <ion-title>Okode | Víctor Hernández</ion-title>
+    </ion-toolbar>
+</ion-footer>
