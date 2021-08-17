@@ -1,0 +1,7 @@
+{
+  "name": "OkodePractica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
