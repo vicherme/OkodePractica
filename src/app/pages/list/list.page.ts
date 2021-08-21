@@ -8,16 +8,11 @@ import { IFilms } from 'src/app/model/IFilms.interface';
   templateUrl: './list.page.html',
   styleUrls: ['./list.page.scss'],
 })
-export class ListPage implements OnInit {
+export class ListPage {
 results: Observable<IFilms>;
-term: string = '';
-
+term = '';
   constructor(private filmService: FilmService) { }
-
-  ngOnInit() {
-  }
-
-  searchChanged(): void {
+  searchChanged() {
     this.results = this.filmService.getFilms(this.term);
   }
 }
